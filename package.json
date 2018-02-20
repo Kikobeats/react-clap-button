@@ -1,0 +1,105 @@
+{
+  "name": "clap-button",
+  "description": "A Medium like clap button",
+  "homepage": "https://github.com/kikobeats/react-clap-button",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "author": {
+    "name": "Kiko Beats",
+    "email": "josefrancisco.verdu@gmail.com",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/react-clap-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kikobeats/react-clap-button/issues"
+  },
+  "keywords": [
+    "clap",
+    "button",
+    "reaction",
+    "medium"
+  ],
+  "dependencies": {
+    "@storybook/addon-backgrounds": "~3.3.13",
+    "mo-js": "~0.288.2",
+    "polished": "~1.9.2",
+    "styled-components": "~3.1.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-centered": "~3.3.13",
+    "@storybook/addon-options": "latest",
+    "@storybook/addon-viewport": "latest",
+    "@storybook/react": "latest",
+    "babel-cli": "latest",
+    "babel-eslint": "latest",
+    "babel-plugin-transform-class-properties": "latest",
+    "babel-plugin-transform-object-rest-spread": "latest",
+    "babel-plugin-transform-react-constant-elements": "latest",
+    "babel-plugin-transform-react-inline-elements": "latest",
+    "babel-plugin-transform-react-pure-class-to-function": "latest",
+    "babel-plugin-transform-react-remove-prop-types": "latest",
+    "babel-preset-env": "latest",
+    "babel-preset-react": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "npm-check-updates": "latest",
+    "prettier-standard": "latest",
+    "prop-types": "~15.6.0",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-feather": "~1.0.8",
+    "size-limit": "latest",
+    "standard": "latest",
+    "standard-markdown": "latest"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
+    "build-storybook": "build-storybook",
+    "dev": "start-storybook -p 6006",
+    "lint": "standard-markdown && standard src stories",
+    "posttest": "npm run size",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run lint && npm run update",
+    "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
+    "size": "size-limit",
+    "start": "node scripts/start.js",
+    "test": "exit 0",
+    "update": "ncu --error-level 2"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">= 16 < 17"
+  },
+  "size-limit": [
+    {
+      "path": "./lib",
+      "limit": "50 kB"
+    }
+  ],
+  "standard": {
+    "globals": [
+      "React",
+      "fetch"
+    ],
+    "parser": "babel-eslint",
+    "plugins": [
+      "jsx-a11y"
+    ]
+  }
+}
