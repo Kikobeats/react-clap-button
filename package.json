@@ -67,12 +67,11 @@
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
     "posttest": "npm run size",
-    "pretest": "npm run lint && npm run update",
+    "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "size": "size-limit",
     "start": "node scripts/start.js",
     "test": "exit 0",
-    "update": "ncu --error-level 2"
   },
   "license": "MIT",
   "lint-staged": {
