@@ -15,7 +15,7 @@
 [![NPM Status](https://img.shields.io/npm/dm/clap-button.svg?style=flat-square)](https://www.npmjs.org/package/clap-button)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> A Medium like clap button. Based on [Ohans Emmanuel Pen](https://codepen.io/ohansemmanuel/full/zEJpYy/), icon by [Luis Durazo](https://thenounproject.com/luisdurazo/).
+> A Medium like clap button. Based on [Ohans Emmanuel](https://codepen.io/ohansemmanuel/full/zEJpYy/) CodePen, icon by [Luis Durazo](https://thenounproject.com/luisdurazo/).
 
 ## Install
 
