@@ -14,6 +14,8 @@
 
 ## Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kikobeats/clap-button.svg)](https://greenkeeper.io/)
+
 ```bash
 $ npm install clap-button --save
 ```
