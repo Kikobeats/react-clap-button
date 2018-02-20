@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2018-02-20)
+
+* Add `backface-visibility` css property ([d48aa20](https://github.com/kikobeats/react-clap-button/commit/d48aa20))
+* Rename ([e827541](https://github.com/kikobeats/react-clap-button/commit/e827541))
+* Update demo.gif ([de3a62c](https://github.com/kikobeats/react-clap-button/commit/de3a62c))
+* Update README.md ([223e448](https://github.com/kikobeats/react-clap-button/commit/223e448))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-02-20)
 
