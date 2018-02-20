@@ -7,9 +7,12 @@ plugins:
   postrelease:
     Generating CHANGELOG file:
       plugin: bumped-changelog
+    Generating build:
+      plugin: bumped-terminal
+      command: 'npm run build'
     Committing new version:
       plugin: bumped-terminal
-      command: 'git add CHANGELOG.md package.json && git commit -m "Release $newVersion"'
+      command: 'git add CHANGELOG.md package.json lib && git commit -m "Release $newVersion"'
     Detecting problems before publish:
       plugin: bumped-terminal
       command: 'git-dirty && npm test'
