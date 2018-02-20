@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "main": "lib/index.js",
   "author": {
-    "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
   "repository": {
@@ -17,10 +17,10 @@
     "url": "https://github.com/kikobeats/react-clap-button/issues"
   },
   "keywords": [
-    "clap",
     "button",
-    "reaction",
-    "medium"
+    "clap",
+    "medium",
+    "reaction"
   ],
   "dependencies": {
     "mo-js": "~0.288.2",
@@ -71,7 +71,7 @@
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "size": "size-limit",
     "start": "node scripts/start.js",
-    "test": "exit 0",
+    "test": "exit 0"
   },
   "license": "MIT",
   "lint-staged": {
