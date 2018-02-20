@@ -23,13 +23,12 @@
     "medium"
   ],
   "dependencies": {
-    "@storybook/addon-backgrounds": "~3.3.13",
     "mo-js": "~0.288.2",
     "polished": "~1.9.2",
     "styled-components": "~3.1.4"
   },
   "devDependencies": {
-    "@storybook/addon-centered": "~3.3.13",
+    "@storybook/addon-centered": "latest",
     "@storybook/addon-options": "latest",
     "@storybook/addon-viewport": "latest",
     "@storybook/react": "latest",
@@ -48,10 +47,10 @@
     "lint-staged": "latest",
     "npm-check-updates": "latest",
     "prettier-standard": "latest",
-    "prop-types": "~15.6.0",
+    "prop-types": "latest",
     "react": "^16",
     "react-dom": "^16",
-    "react-feather": "~1.0.8",
+    "react-feather": "latest",
     "size-limit": "latest",
     "standard": "latest",
     "standard-markdown": "latest"
