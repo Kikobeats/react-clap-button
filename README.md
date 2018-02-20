@@ -2,6 +2,8 @@
   <img src="demo.gif">
 </h1>
 
+###### [Storybook](https://clap-button.netlify.com/)
+
 ![Last version](https://img.shields.io/github/tag/Kikobeats/clap-button.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/clap-button/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/clap-button)
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/clap-button.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/clap-button)
