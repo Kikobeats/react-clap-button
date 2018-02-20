@@ -60,6 +60,7 @@ const ClapCount = styled.span`
   height: ${props => props.size / 2}px;
   width: ${props => props.size / 2}px;
   line-height: ${props => props.size / 2}px;
+  backface-visibility: hidden;
 `
 
 const ClapCountTotal = styled.span`
