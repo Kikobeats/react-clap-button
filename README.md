@@ -1,8 +1,7 @@
-<h1 align="center">
+<h5 align="center">
   <img src="demo.gif">
-</h1>
-
-###### [Storybook](https://clap-button.netlify.com/)
+  <a href="https://clap-button.netlify.com/">See demo</a>
+</h5>
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/clap-button.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/clap-button/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/clap-button)
