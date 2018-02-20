@@ -1,9 +1,9 @@
-<h5 align="center">
-  <img src="demo.gif" />
-</h5>
+<h5 align="center"><img src="demo.gif" /></h5>
 
 <p align="center">
-  <a align="center" href="https://clap-button.netlify.com/">See demo</a>
+  <b><a align="center" href="https://clap-button.netlify.com/">See demo</a></b>
+  </br>
+  </br>
 </p>
 
 
