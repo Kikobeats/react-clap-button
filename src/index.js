@@ -5,17 +5,17 @@ import {darken} from 'polished'
 
 import ClapIcon from './icon'
 
-const shockwave = props => keyframes`
+const shockwave = ({secondaryColor}) => keyframes`
   0% {
     transform: scale(1);
-    box-shadow: 0 0 2px ${props => props.secondaryColor};
+    box-shadow: 0 0 2px ${secondaryColor};
     opacity: 1;
   }
 
   100% {
     transform: scale(1);
     opacity: 0;
-    box-shadow: 0 0 50px ${darken(0.2, props.secondaryColor)}, inset 0 0 10px ${props.secondaryColor};
+    box-shadow: 0 0 50px ${darken(0.2, secondaryColor)}, inset 0 0 10px ${secondaryColor};
   }
 `
 
@@ -23,9 +23,9 @@ const ClapButton = styled.button`
   position: relative;
   outline: 1px solid transparent;
   border-radius: 50%;
-  border: 1px solid ${props => props.primaryColor};
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
+  border: 1px solid ${({primaryColor}) => primaryColor};
+  width: ${({size}) => size}px;
+  height: ${({size}) => size}px;
   background: none;
 
   &::after {
@@ -35,13 +35,13 @@ const ClapButton = styled.button`
     left: 0;
     display: block;
     border-radius: 50%;
-    width: ${props => props.size - 1}px;
-    height: ${props => props.size - 1}px;
+    width: ${({size}) => size - 1}px;
+    height: ${({size}) => size - 1}px;
   }
 
   &:hover {
     cursor: pointer;
-    border: 1px solid ${props => props.secondaryColor};
+    border: 1px solid ${({secondaryColor}) => secondaryColor};
     transition: border-color 0.3s ease-in;
     &::after {
       animation: ${shockwave} 1s ease-in infinite;
@@ -51,26 +51,26 @@ const ClapButton = styled.button`
 
 const ClapCount = styled.span`
   position: absolute;
-  top: -${props => props.size / 1.6}px;
-  left: ${props => props.size / 4}px;
+  top: -${({size}) => size / 1.6}px;
+  left: ${({size}) => size / 4}px;
   font-size: 0.8rem;
   color: white;
-  background: ${props => props.secondaryColor};
+  background: ${({secondaryColor}) => secondaryColor};
   border-radius: 50%;
-  height: ${props => props.size / 2}px;
-  width: ${props => props.size / 2}px;
-  line-height: ${props => props.size / 2}px;
+  height: ${({size}) => size / 2}px;
+  width: ${({size}) => size / 2}px;
+  line-height: ${({size}) => size / 2}px;
   backface-visibility: hidden;
 `
 
 const ClapCountTotal = styled.span`
   position: absolute;
   font-size: 0.8rem;
-  width: ${props => props.size}px;
+  width: ${({size}) => size}px;
   text-align: center;
   left: 0;
-  top: -${props => props.size / 3.5}px;
-  color: ${props => props.primaryColor};
+  top: -${({size}) => size / 3.5}px;
+  color: ${({primaryColor}) => primaryColor};
 `
 
 const Clap = class extends React.Component {
