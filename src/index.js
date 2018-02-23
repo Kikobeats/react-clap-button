@@ -163,12 +163,18 @@ const Clap = class extends React.Component {
   }
 
   onClick () {
+    const {maxCount} = this.props
     this.animationTimeline.replay()
-    this.setState((prevState, nextState) => ({
-      count: Math.min(prevState.count + 1, 50),
-      countTotal: prevState.countTotal + 1,
-      isClicked: true
-    }))
+
+    this.setState((prevState, nextState) => {
+      if (prevState.count < maxCount) {
+        return {
+          count: prevState.count + 1,
+          countTotal: prevState.countTotal + 1,
+          isClicked: true
+        }
+      }
+    })
   }
 
   render () {
@@ -195,6 +201,7 @@ Clap.defaultProps = {
   secondaryColor: 'rgba(39,174,96 ,1)',
   countTotal: 0,
   count: 0,
+  maxCount: 50,
   iconComponent: ClapIcon
 }
 

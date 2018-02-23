@@ -22,12 +22,13 @@ const CustomIcon = styled(Star)`
 storiesOf('ClapButton', module)
   .addDecorator(centered)
   .addWithJSX('default', () => <ClapButton />)
-  .addWithJSX('custom icon', () => (
+  .addWithJSX('maxCount', () => <ClapButton maxCount={3} countTotal={100} />)
+  .addWithJSX('icon', () => (
     <ClapButton
       iconComponent={(props) => <CustomIcon size={40} {...props} />}
     />
   ))
-  .addWithJSX('custom color', () => (
+  .addWithJSX('color', () => (
     <ClapButton
       primaryColor='#5f27ae'
       secondaryColor='#5f27ae'
