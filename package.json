@@ -53,7 +53,8 @@
     "react-feather": "latest",
     "size-limit": "latest",
     "standard": "latest",
-    "standard-markdown": "latest"
+    "standard-markdown": "latest",
+    "storybook-addon-jsx": "latest"
   },
   "engines": {
     "node": ">= 8"
