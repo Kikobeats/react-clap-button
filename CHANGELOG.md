@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2018-02-23)
+
+* Fix warning ([7730f4a](https://github.com/kikobeats/react-clap-button/commit/7730f4a))
+* Improve storybook ([cb50e81](https://github.com/kikobeats/react-clap-button/commit/cb50e81))
+* Increment count if clicks is under total ([a135f19](https://github.com/kikobeats/react-clap-button/commit/a135f19)), closes [#5](https://github.com/kikobeats/react-clap-button/issues/5)
+* Prop destructuring ([6108b09](https://github.com/kikobeats/react-clap-button/commit/6108b09))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2018-02-20)
 
