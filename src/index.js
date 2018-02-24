@@ -27,6 +27,7 @@ const ClapButton = styled.button`
   width: ${({size}) => size}px;
   height: ${({size}) => size}px;
   background: none;
+  transition: border 0.3s ease-in;
 
   &::after {
     content: '';
@@ -39,13 +40,16 @@ const ClapButton = styled.button`
     height: ${({size}) => size - 1}px;
   }
 
-  &:hover {
-    cursor: pointer;
+  &:hover, &:focus {
     border: 1px solid ${({secondaryColor}) => secondaryColor};
-    transition: border-color 0.3s ease-in;
+
     &::after {
       animation: ${shockwave} 1s ease-in infinite;
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `
 
