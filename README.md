@@ -1,7 +1,7 @@
 <h5 align="center"><img src="demo.gif" /></h5>
 
 <p align="center">
-  <b><a align="center" href="https://clap-button.netlify.com/">See demo</a></b>
+  <b><a align="center" href="https://react-clap-button.netlify.com/">See demo</a></b>
   </br>
   </br>
 </p>
@@ -11,7 +11,7 @@
 [![Build Status](https://img.shields.io/travis/Kikobeats/react-clap-button/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/react-clap-button)
 [![Dependency status](https://img.shields.io/david/Kikobeats/react-clap-button.svg?style=flat-square)](https://david-dm.org/Kikobeats/react-clap-button)
 [![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/react-clap-button.svg?style=flat-square)](https://david-dm.org/Kikobeats/react-clap-button#info=devDependencies)
-[![NPM Status](https://img.shields.io/npm/dm/clap-button.svg?style=flat-square)](https://www.npmjs.org/package/clap-button)
+[![NPM Status](https://img.shields.io/npm/dm/react-clap-button.svg?style=flat-square)](https://www.npmjs.org/package/react-clap-button)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
 > A Medium like clap button. Based on [Ohans Emmanuel](https://codepen.io/ohansemmanuel/full/zEJpYy/) CodePen, icon by [Luis Durazo](https://thenounproject.com/luisdurazo/).
