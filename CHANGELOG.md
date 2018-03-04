@@ -1,3 +1,15 @@
+<a name="1.0.3"></a>
+## 1.0.3 (2018-03-04)
+
+* Adjust border transition ([46cf183](https://github.com/kikobeats/react-clap-button/commit/46cf183))
+* Disable clicks on count numbers ([ee2b9dd](https://github.com/kikobeats/react-clap-button/commit/ee2b9dd))
+* Disable text-highlighting ([a427e08](https://github.com/kikobeats/react-clap-button/commit/a427e08))
+* Update index.js ([bdaaaab](https://github.com/kikobeats/react-clap-button/commit/bdaaaab))
+* Update README ([23f7c8f](https://github.com/kikobeats/react-clap-button/commit/23f7c8f))
+* Update release scripts ([bd18d70](https://github.com/kikobeats/react-clap-button/commit/bd18d70))
+
+
+
 <a name="1.0.2"></a>
 ## 1.0.2 (2018-02-23)
 

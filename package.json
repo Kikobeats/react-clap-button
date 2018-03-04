@@ -2,7 +2,7 @@
   "name": "react-clap-button",
   "description": "A Medium like clap button",
   "homepage": "https://github.com/kikobeats/react-clap-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
