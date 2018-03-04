@@ -72,7 +72,7 @@ const ClapCount = styled.span`
   width: ${({size}) => size / 2}px;
   line-height: ${({size}) => size / 2}px;
   backface-visibility: hidden;
-  ${textStyles}
+  ${textStyles};
 `
 
 const ClapCountTotal = styled.span`
@@ -81,7 +81,7 @@ const ClapCountTotal = styled.span`
   left: 0;
   top: -${({size}) => size / 3.5}px;
   color: ${({primaryColor}) => primaryColor};
-  ${textStyles}
+  ${textStyles};
 `
 
 const Clap = class extends React.Component {
