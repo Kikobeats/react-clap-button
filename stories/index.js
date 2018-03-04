@@ -12,7 +12,7 @@ const CustomIcon = styled(Star)`
   stroke-width: 1px;
   fill: none;
   ${props =>
-    props.isclicked &&
+    props.isClicked &&
     css`
       fill: ${props => props.secondaryColor};
       stroke: white;
