@@ -1,6 +1,6 @@
 import React from 'react'
 import mojs from 'mo-js'
-import styled, {keyframes} from 'styled-components'
+import styled, {keyframes, css} from 'styled-components'
 import {darken} from 'polished'
 
 import ClapIcon from './icon'
@@ -27,6 +27,7 @@ const ClapButton = styled.button`
   width: ${({size}) => size}px;
   height: ${({size}) => size}px;
   background: none;
+  transition: border 0.3s ease-in;
 
   &::after {
     content: '';
@@ -39,21 +40,29 @@ const ClapButton = styled.button`
     height: ${({size}) => size - 1}px;
   }
 
-  &:hover {
-    cursor: pointer;
+  &:hover, &:focus {
     border: 1px solid ${({secondaryColor}) => secondaryColor};
-    transition: border-color 0.3s ease-in;
+
     &::after {
       animation: ${shockwave} 1s ease-in infinite;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+const textStyles = css`
+  font-size: 0.8rem;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
 `
 
 const ClapCount = styled.span`
-  position: absolute;
   top: -${({size}) => size / 1.6}px;
   left: ${({size}) => size / 4}px;
-  font-size: 0.8rem;
   color: white;
   background: ${({secondaryColor}) => secondaryColor};
   border-radius: 50%;
@@ -61,16 +70,16 @@ const ClapCount = styled.span`
   width: ${({size}) => size / 2}px;
   line-height: ${({size}) => size / 2}px;
   backface-visibility: hidden;
+  ${textStyles}
 `
 
 const ClapCountTotal = styled.span`
-  position: absolute;
-  font-size: 0.8rem;
   width: ${({size}) => size}px;
   text-align: center;
   left: 0;
   top: -${({size}) => size / 3.5}px;
   color: ${({primaryColor}) => primaryColor};
+  ${textStyles}
 `
 
 const Clap = class extends React.Component {
