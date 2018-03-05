@@ -192,7 +192,8 @@ const Clap = class extends React.Component {
     this.setState(({count, countTotal}) => {
       return {
         isClicked: false,
-        countTotal: countTotal - count
+        countTotal: countTotal - count,
+        count: 0
       }
     })
   }
