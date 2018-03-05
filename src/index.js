@@ -1,86 +1,12 @@
 import React from 'react'
 import mojs from 'mo-js'
-import styled, {keyframes, css} from 'styled-components'
-import {darken} from 'polished'
+import {ThemeProvider} from 'styled-components'
 
 import ClapIcon from './icon'
-
-const shockwave = ({secondaryColor}) => keyframes`
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 2px ${secondaryColor};
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-    box-shadow: 0 0 50px ${darken(0.2, secondaryColor)}, inset 0 0 10px ${secondaryColor};
-  }
-`
-
-const ClapButton = styled.button`
-  position: relative;
-  outline: 1px solid transparent;
-  border-radius: 50%;
-  border: 1px solid ${({primaryColor}) => primaryColor};
-  width: ${({size}) => size}px;
-  height: ${({size}) => size}px;
-  background: none;
-  transition: border 0.3s ease-in;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 50%;
-    width: ${({size}) => size - 1}px;
-    height: ${({size}) => size - 1}px;
-  }
-
-  &:hover, &:focus {
-    border: 1px solid ${({secondaryColor}) => secondaryColor};
-
-    &::after {
-      animation: ${shockwave} 1s ease-in infinite;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-const textStyles = css`
-  font-size: 0.8rem;
-  user-select: none;
-  pointer-events: none;
-  position: absolute;
-`
-
-const ClapCount = styled.span`
-  top: -${({size}) => size / 1.6}px;
-  left: ${({size}) => size / 4}px;
-  color: white;
-  background: ${({secondaryColor}) => secondaryColor};
-  border-radius: 50%;
-  height: ${({size}) => size / 2}px;
-  width: ${({size}) => size / 2}px;
-  line-height: ${({size}) => size / 2}px;
-  backface-visibility: hidden;
-  ${textStyles}
-`
-
-const ClapCountTotal = styled.span`
-  width: ${({size}) => size}px;
-  text-align: center;
-  left: 0;
-  top: -${({size}) => size / 3.5}px;
-  color: ${({primaryColor}) => primaryColor};
-  ${textStyles}
-`
+import ClapButton from './components/ClapButton'
+import ClapCount from './components/ClapCount'
+import ClapCountTotal from './components/ClapCountTotal'
+import {textStyles} from './utils'
 
 const Clap = class extends React.Component {
   constructor (props) {
@@ -188,30 +114,36 @@ const Clap = class extends React.Component {
 
   render () {
     const {count, countTotal, isClicked} = this.state
-    const {size, primaryColor, secondaryColor, iconComponent: ClapIcon} = this.props
+    const {iconComponent: ClapIcon, theme} = this.props
+
+    const themeProps = Object.assign({}, theme || {}, defaultProps);
 
     return (
-      <ClapButton id='clap' primaryColor={primaryColor} secondaryColor={secondaryColor} size={size} onClick={this.onClick}>
-        <ClapIcon id='clap--icon' isClicked={isClicked} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-        <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>
-          +{count}
-        </ClapCount>
-        <ClapCountTotal primaryColor={primaryColor} id='clap--count-total' size={size}>
-          +{countTotal}
-        </ClapCountTotal>
-      </ClapButton>
+      <ThemeProvider theme={themeProps}>
+        <ClapButton id='clap' onClick={this.onClick}>
+          <ClapIcon id='clap--icon' isClicked={isClicked} />
+          <ClapCount id='clap--count'>
+            +{count}
+          </ClapCount>
+          <ClapCountTotal id='clap--count-total'>
+            +{countTotal}
+          </ClapCountTotal>
+        </ClapButton>
+      </ThemeProvider>
     )
   }
 }
 
 Clap.defaultProps = {
-  size: 70,
-  primaryColor: 'rgba(189,195,199 ,1)',
-  secondaryColor: 'rgba(39,174,96 ,1)',
   countTotal: 0,
   count: 0,
   maxCount: 50,
-  iconComponent: ClapIcon
+  iconComponent: ClapIcon,
+  theme: {
+    primaryColor: 'rgb(189, 195, 199)',
+    secondaryColor: 'rgb(39, 174, 96)',
+    size: 70
+  }
 }
 
 export default Clap

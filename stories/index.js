@@ -25,12 +25,9 @@ storiesOf('ClapButton', module)
   .addWithJSX('maxCount', () => <ClapButton maxCount={3} countTotal={100} />)
   .addWithJSX('icon', () => (
     <ClapButton
-      iconComponent={(props) => <CustomIcon size={40} {...props} />}
+      iconComponent={(props) => <CustomIcon theme={{size: 40}} {...props} />}
     />
   ))
   .addWithJSX('color', () => (
-    <ClapButton
-      primaryColor='#5f27ae'
-      secondaryColor='#5f27ae'
-    />
+    <ClapButton theme={{primaryColor:'#5f27ae', secondaryColor:'#5f27ae'}}/>
   ))
