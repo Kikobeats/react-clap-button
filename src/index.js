@@ -8,6 +8,12 @@ import ClapCount from './components/ClapCount'
 import ClapCountTotal from './components/ClapCountTotal'
 import {textStyles} from './utils'
 
+const defaultTheme = {
+  primaryColor: 'rgb(189, 195, 199)',
+  secondaryColor: 'rgb(39, 174, 96)',
+  size: 70
+}
+
 const Clap = class extends React.Component {
   constructor (props) {
     super(props)
@@ -116,10 +122,8 @@ const Clap = class extends React.Component {
     const {count, countTotal, isClicked} = this.state
     const {iconComponent: ClapIcon, theme} = this.props
 
-    const themeProps = Object.assign({}, theme || {}, defaultProps);
-
     return (
-      <ThemeProvider theme={themeProps}>
+      <ThemeProvider theme={Object.assign(defaultTheme, theme || {})}>
         <ClapButton id='clap' onClick={this.onClick}>
           <ClapIcon id='clap--icon' isClicked={isClicked} />
           <ClapCount id='clap--count'>
@@ -138,12 +142,7 @@ Clap.defaultProps = {
   countTotal: 0,
   count: 0,
   maxCount: 50,
-  iconComponent: ClapIcon,
-  theme: {
-    primaryColor: 'rgb(189, 195, 199)',
-    secondaryColor: 'rgb(39, 174, 96)',
-    size: 70
-  }
+  iconComponent: ClapIcon
 }
 
 export default Clap
