@@ -92,6 +92,7 @@ const Clap = class extends React.Component {
       isClicked: false
     }
     this.onClick = this.onClick.bind(this)
+    this.onClickClear = this.onClickClear.bind(this)
   }
 
   componentDidMount () {
@@ -176,13 +177,22 @@ const Clap = class extends React.Component {
     const {maxCount} = this.props
     this.animationTimeline.replay()
 
-    this.setState((prevState, nextState) => {
-      if (prevState.count < maxCount) {
+    this.setState(({count, countTotal}) => {
+      if (count < maxCount) {
         return {
-          count: prevState.count + 1,
-          countTotal: prevState.countTotal + 1,
+          count: count + 1,
+          countTotal: countTotal + 1,
           isClicked: true
         }
+      }
+    })
+  }
+
+  onClickClear () {
+    this.setState(({count, countTotal}) => {
+      return {
+        isClicked: false,
+        countTotal: countTotal - count
       }
     })
   }
@@ -192,7 +202,7 @@ const Clap = class extends React.Component {
     const {size, primaryColor, secondaryColor, iconComponent: ClapIcon} = this.props
 
     return (
-      <ClapWrap primaryColor={primaryColor} secondaryColor={secondaryColor} isClicked={isClicked}>
+      <ClapWrap primaryColor={primaryColor} secondaryColor={secondaryColor} isClicked={isClicked} onClickClear={this.onClickClear}>
         <ClapButton id='clap' primaryColor={primaryColor} secondaryColor={secondaryColor} size={size} onClick={this.onClick}>
           <ClapIcon id='clap--icon' isClicked={isClicked} primaryColor={primaryColor} secondaryColor={secondaryColor} />
           <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>

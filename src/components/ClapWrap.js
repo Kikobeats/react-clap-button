@@ -19,11 +19,11 @@ const ExtendedClearClaps = styled(ClearClaps)`
   }
 `
 
-export default ({children, isClicked, primaryColor, secondaryColor}) => (
+export default ({children, isClicked, onClickClear, primaryColor, secondaryColor}) => (
   <ClapWrap>
     <ClapWrapChildren>{children}</ClapWrapChildren>
     {isClicked && (
-      <ExtendedClearClaps primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      <ExtendedClearClaps primaryColor={primaryColor} secondaryColor={secondaryColor} onClick={onClickClear} />
     )}
   </ClapWrap>
 )
