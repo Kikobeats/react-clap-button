@@ -192,7 +192,7 @@ const Clap = class extends React.Component {
     const {size, primaryColor, secondaryColor, iconComponent: ClapIcon} = this.props
 
     return (
-      <ClapWrap primaryColor={primaryColor} secondaryColor={secondaryColor}>
+      <ClapWrap primaryColor={primaryColor} secondaryColor={secondaryColor} isClicked={isClicked}>
         <ClapButton id='clap' primaryColor={primaryColor} secondaryColor={secondaryColor} size={size} onClick={this.onClick}>
           <ClapIcon id='clap--icon' isClicked={isClicked} primaryColor={primaryColor} secondaryColor={secondaryColor} />
           <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ClearClaps from './ClearClaps'
+import ClearClaps, {clearClapsSlideIn} from './ClearClaps'
 
 const ClapWrap = styled.div`
   display: inline-block;
@@ -15,14 +15,15 @@ const ClapWrapChildren = styled.div`
 
 const ExtendedClearClaps = styled(ClearClaps)`
   ${ClapWrap}:hover & {
-    transform: translateX(calc(100% - 5px));
-    transition-delay: 1s;
+    animation: ${clearClapsSlideIn} 0.4s ease-out forwards 1s;
   }
 `
 
-export default ({children, primaryColor, secondaryColor}) => (
+export default ({children, isClicked, primaryColor, secondaryColor}) => (
   <ClapWrap>
     <ClapWrapChildren>{children}</ClapWrapChildren>
-    <ExtendedClearClaps primaryColor={primaryColor} secondaryColor={secondaryColor} />
+    {isClicked && (
+      <ExtendedClearClaps primaryColor={primaryColor} secondaryColor={secondaryColor} />
+    )}
   </ClapWrap>
 )

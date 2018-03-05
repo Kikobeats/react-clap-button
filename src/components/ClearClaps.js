@@ -1,5 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+export const clearClapsSlideIn = keyframes`
+  to {
+    transform: translateX(calc(100% - 5px));
+  }
+`
 
 const ClearClaps = styled.button`
   border: 0;
@@ -7,14 +13,13 @@ const ClearClaps = styled.button`
   position: absolute;
   right: 0;
   top: calc(50% - 15px);
-  height: 30px;
   transform: translateX(0);
+  height: 30px;
+  width: 36px;
   background: ${({primaryColor}) => primaryColor};
   border-radius: 0 9999px 9999px 0;
-  width: 36px;
   backface-visibility: hidden;
   cursor: pointer;
-  transition: transform .4s ease-out .4s;
   outline: none;
 
   &::before,
@@ -38,4 +43,4 @@ const ClearClaps = styled.button`
   }
 `
 
-export default props => <ClearClaps {...props}/>
+export default props => <ClearClaps {...props} />
