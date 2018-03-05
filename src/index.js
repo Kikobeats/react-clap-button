@@ -71,7 +71,7 @@ const ClapCount = styled.span`
   width: ${({size}) => size / 2}px;
   line-height: ${({size}) => size / 2}px;
   backface-visibility: hidden;
-  ${textStyles}
+  ${textStyles};
 `
 
 const ClapCountTotal = styled.span`
@@ -80,7 +80,11 @@ const ClapCountTotal = styled.span`
   left: 0;
   top: -${({size}) => size / 3.5}px;
   color: ${({primaryColor}) => primaryColor};
-  ${textStyles}
+  ${textStyles};
+  ${({countTotal}) => css`
+    opacity: ${countTotal > 0 ? 1 : '0 !important'};
+    transition: ${countTotal > 0 ? '' : 'opacity 0.25s ease-out'};
+  `};
 `
 
 const Clap = class extends React.Component {
@@ -209,7 +213,7 @@ const Clap = class extends React.Component {
           <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>
             +{count}
           </ClapCount>
-          <ClapCountTotal primaryColor={primaryColor} id='clap--count-total' size={size}>
+          <ClapCountTotal primaryColor={primaryColor} id='clap--count-total' size={size} countTotal={countTotal}>
             +{countTotal}
           </ClapCountTotal>
         </ClapButton>
