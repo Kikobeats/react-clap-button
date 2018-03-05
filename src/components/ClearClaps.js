@@ -1,14 +1,11 @@
 import React from 'react'
-import styled, {keyframes} from 'styled-components'
-
-export const clearClapsSlideIn = keyframes`
-  to {
-    transform: translateX(calc(100% - 5px));
-  }
-`
+import {Transition} from 'react-transition-group'
+import styled from 'styled-components'
+import {darken} from 'polished'
 
 const ClearClaps = styled.button`
   border: 0;
+  padding: 0;
   appearance: none;
   position: absolute;
   right: 0;
@@ -21,6 +18,7 @@ const ClearClaps = styled.button`
   backface-visibility: hidden;
   cursor: pointer;
   outline: none;
+  transition: transform 0.8s ease-in-out 1s;
 
   &::before,
   &::after {
@@ -32,6 +30,7 @@ const ClearClaps = styled.button`
     width: 2px;
     background: ${({secondaryColor}) => secondaryColor};
     border-radius: 9999px;
+    transition: background 0.3s ease-in-out;
   }
 
   &::before {
@@ -41,6 +40,27 @@ const ClearClaps = styled.button`
   &::after {
     transform: rotate(-45deg);
   }
+
+  &:hover {
+    &::before,
+    &::after {
+      background: ${({secondaryColor}) => darken(0.1, secondaryColor)};
+    }
+  }
 `
 
-export default props => <ClearClaps {...props} />
+const transitionStyles = {
+  entered: {
+    transform: 'translateX(calc(100% - 5px))',
+  },
+  exiting: {
+    transitionDuration: '0.6s',
+    transitionDelay: '0.8s'
+  }
+}
+
+export default ({in: inProp, ...props}) => (
+  <Transition in={inProp} timeout={{enter: 1000, exit: 800}}>
+    {state => <ClearClaps style={transitionStyles[state]} {...props} />}
+  </Transition>
+)

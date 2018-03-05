@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import ClearClaps, {clearClapsSlideIn} from './ClearClaps'
+import ClearClaps from './ClearClaps'
 
-const ClapWrap = styled.div`
+const Wrap = styled.div`
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -13,17 +13,48 @@ const ClapWrapChildren = styled.div`
   z-index: 2;
 `
 
-const ExtendedClearClaps = styled(ClearClaps)`
-  ${ClapWrap}:hover & {
-    animation: ${clearClapsSlideIn} 0.4s ease-out forwards 1s;
+export default class ClapWrap extends React.Component {
+  state = {
+    displayClear: false
   }
-`
 
-export default ({children, isClicked, onClickClear, primaryColor, secondaryColor}) => (
-  <ClapWrap>
-    <ClapWrapChildren>{children}</ClapWrapChildren>
-    {isClicked && (
-      <ExtendedClearClaps primaryColor={primaryColor} secondaryColor={secondaryColor} onClick={onClickClear} />
-    )}
-  </ClapWrap>
-)
+  constructor (props) {
+    super(props)
+  }
+
+  onClick = () => {
+    if (this.state.displayClear) {
+      this.setState({displayClear: false})
+    }
+  }
+
+  mouseMove = () => {
+    if (!this.state.displayClear) {
+      this.setState({displayClear: true})
+    }
+  }
+
+  mouseLeave = () => {
+    if (this.state.displayClear) {
+      this.setState({displayClear: false})
+    }
+  }
+
+  render () {
+    const {children, isClicked, onClickClear, primaryColor, secondaryColor} = this.props
+    const {displayClear} = this.state
+    return (
+      <Wrap onMouseLeave={this.mouseLeave}>
+        <ClapWrapChildren onMouseMove={this.mouseMove} onClick={this.onClick}>
+          {children}
+        </ClapWrapChildren>
+        <ClearClaps
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
+          onClick={onClickClear}
+          in={displayClear && isClicked}
+        />
+      </Wrap>
+    )
+  }
+}
