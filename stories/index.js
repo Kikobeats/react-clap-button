@@ -30,7 +30,7 @@ storiesOf('ClapButton', module)
   ))
   .addWithJSX('color', () => (
     <ClapButton
-      primaryColor='#5f27ae'
+      primaryColor='#ff77bb'
       secondaryColor='#5f27ae'
     />
   ))
