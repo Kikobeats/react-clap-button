@@ -3,7 +3,8 @@ import mojs from 'mo-js'
 import styled, {keyframes, css} from 'styled-components'
 import {darken} from 'polished'
 
-import ClapIcon from './icon'
+import ClapIcon from './components/ClapIcon'
+import ClapWrap from './components/ClapWrap'
 
 const shockwave = ({secondaryColor}) => keyframes`
   0% {
@@ -26,7 +27,7 @@ const ClapButton = styled.button`
   border: 1px solid ${({primaryColor}) => primaryColor};
   width: ${({size}) => size}px;
   height: ${({size}) => size}px;
-  background: none;
+  background: #fff;
   transition: border 0.3s ease-in;
 
   &::after {
@@ -191,15 +192,17 @@ const Clap = class extends React.Component {
     const {size, primaryColor, secondaryColor, iconComponent: ClapIcon} = this.props
 
     return (
-      <ClapButton id='clap' primaryColor={primaryColor} secondaryColor={secondaryColor} size={size} onClick={this.onClick}>
-        <ClapIcon id='clap--icon' isClicked={isClicked} primaryColor={primaryColor} secondaryColor={secondaryColor} />
-        <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>
-          +{count}
-        </ClapCount>
-        <ClapCountTotal primaryColor={primaryColor} id='clap--count-total' size={size}>
-          +{countTotal}
-        </ClapCountTotal>
-      </ClapButton>
+      <ClapWrap primaryColor={primaryColor} secondaryColor={secondaryColor}>
+        <ClapButton id='clap' primaryColor={primaryColor} secondaryColor={secondaryColor} size={size} onClick={this.onClick}>
+          <ClapIcon id='clap--icon' isClicked={isClicked} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+          <ClapCount id='clap--count' secondaryColor={secondaryColor} size={size}>
+            +{count}
+          </ClapCount>
+          <ClapCountTotal primaryColor={primaryColor} id='clap--count-total' size={size}>
+            +{countTotal}
+          </ClapCountTotal>
+        </ClapButton>
+      </ClapWrap>
     )
   }
 }
