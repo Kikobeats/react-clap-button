@@ -1,6 +1,6 @@
 import React from 'react'
 import {Transition} from 'react-transition-group'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {darken} from 'polished'
 
 const ClearClaps = styled.button`
@@ -13,7 +13,6 @@ const ClearClaps = styled.button`
   transform: translateX(0);
   height: 30px;
   width: 36px;
-  background: ${({primaryColor}) => primaryColor};
   border-radius: 0 9999px 9999px 0;
   backface-visibility: hidden;
   cursor: pointer;
@@ -28,7 +27,6 @@ const ClearClaps = styled.button`
     top: calc(50% - 8px);
     height: 16px;
     width: 2px;
-    background: ${({secondaryColor}) => secondaryColor};
     border-radius: 9999px;
     transition: background 0.3s ease-in-out;
   }
@@ -41,17 +39,26 @@ const ClearClaps = styled.button`
     transform: rotate(-45deg);
   }
 
-  &:hover {
+  ${({theme: {primaryColor, secondaryColor}}) => css`
+    background: ${primaryColor};
+
     &::before,
     &::after {
-      background: ${({secondaryColor}) => darken(0.1, secondaryColor)};
+      background: ${secondaryColor};
     }
-  }
+
+    &:hover {
+      &::before,
+      &::after {
+        background: ${darken(0.1, secondaryColor)};
+      }
+    }
+  `}
 `
 
 const transitionStyles = {
   entered: {
-    transform: 'translateX(calc(100% - 5px))',
+    transform: 'translateX(calc(100% - 5px))'
   },
   exiting: {
     transitionDuration: '0.6s',

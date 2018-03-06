@@ -18,10 +18,6 @@ export default class ClapWrap extends React.Component {
     displayClear: false
   }
 
-  constructor (props) {
-    super(props)
-  }
-
   onClick = () => {
     if (this.state.displayClear) {
       this.setState({displayClear: false})
@@ -41,7 +37,7 @@ export default class ClapWrap extends React.Component {
   }
 
   render () {
-    const {children, isClicked, onClickClear, primaryColor, secondaryColor} = this.props
+    const {children, isClicked, onClickClear} = this.props
     const {displayClear} = this.state
     return (
       <Wrap onMouseLeave={this.mouseLeave}>
@@ -49,8 +45,6 @@ export default class ClapWrap extends React.Component {
           {children}
         </ClapWrapChildren>
         <ClearClaps
-          primaryColor={primaryColor}
-          secondaryColor={secondaryColor}
           onClick={onClickClear}
           in={displayClear && isClicked}
         />
