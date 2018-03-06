@@ -6,7 +6,6 @@ import ClapIcon from './icon'
 import ClapButton from './components/ClapButton'
 import ClapCount from './components/ClapCount'
 import ClapCountTotal from './components/ClapCountTotal'
-import {textStyles} from './utils'
 
 const defaultTheme = {
   primaryColor: 'rgb(189, 195, 199)',
@@ -103,6 +102,10 @@ const Clap = class extends React.Component {
     ])
   }
 
+  getTheme () {
+    return Object.assign({}, defaultTheme, this.props.theme)
+  }
+
   onClick () {
     const {maxCount} = this.props
     this.animationTimeline.replay()
@@ -120,10 +123,10 @@ const Clap = class extends React.Component {
 
   render () {
     const {count, countTotal, isClicked} = this.state
-    const {iconComponent: ClapIcon, theme} = this.props
+    const {iconComponent: ClapIcon} = this.props
 
     return (
-      <ThemeProvider theme={Object.assign(defaultTheme, theme || {})}>
+      <ThemeProvider theme={this.getTheme()}>
         <ClapButton id='clap' onClick={this.onClick}>
           <ClapIcon id='clap--icon' isClicked={isClicked} />
           <ClapCount id='clap--count'>
