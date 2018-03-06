@@ -103,7 +103,8 @@ const Clap = class extends React.Component {
   }
 
   getTheme () {
-    return Object.assign({}, defaultTheme, this.props.theme)
+    const {theme = {}} = this.props
+    return Object.assign({}, defaultTheme, theme)
   }
 
   onClick () {
