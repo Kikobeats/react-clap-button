@@ -1,13 +1,13 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
 import {storiesOf} from '@storybook/react'
-import {Star} from 'react-feather'
+import {ThumbsUp} from 'react-feather'
 
 import centered from '@storybook/addon-centered'
 
 import ClapButton from '../src'
 
-const CustomIcon = styled(Star)`
+const CustomIcon = styled(ThumbsUp)`
   stroke: ${({ theme: { secondaryColor } }) => secondaryColor};
   stroke-width: 1px;
   fill: none;
