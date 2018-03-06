@@ -8,13 +8,11 @@ import centered from '@storybook/addon-centered'
 import ClapButton from '../src'
 
 const CustomIcon = styled(Star)`
-  stroke: ${props => props.secondaryColor};
+  stroke: ${({ theme: { secondaryColor } }) => secondaryColor};
   stroke-width: 1px;
   fill: none;
-  ${props =>
-    props.isClicked &&
-    css`
-      fill: ${props => props.secondaryColor};
+  ${props => props.isClicked && css`
+      fill: ${({ theme: { secondaryColor } }) => secondaryColor};
       stroke: white;
     `};
 `
@@ -25,9 +23,12 @@ storiesOf('ClapButton', module)
   .addWithJSX('maxCount', () => <ClapButton maxCount={3} countTotal={100} />)
   .addWithJSX('icon', () => (
     <ClapButton
-      iconComponent={(props) => <CustomIcon theme={{size: 40}} {...props} />}
+      theme={{ size: 70 }}
+      iconComponent={props => <CustomIcon {...props} />}
     />
   ))
   .addWithJSX('color', () => (
-    <ClapButton theme={{primaryColor:'#5f27ae', secondaryColor:'#5f27ae'}}/>
+    <ClapButton
+      theme={{ primaryColor: '#5f27ae', secondaryColor: '#5f27ae' }}
+    />
   ))
