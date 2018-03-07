@@ -1,17 +1,15 @@
 import styled, {css, keyframes} from 'styled-components'
-import {darken} from 'polished'
+import {darken, rgba} from 'polished'
 
 const shockwave = ({theme: {secondaryColor}}) => keyframes`
   0% {
     transform: scale(1);
     box-shadow: 0 0 2px ${secondaryColor};
-    opacity: 1;
   }
 
   100% {
     transform: scale(1);
-    opacity: 0;
-    box-shadow: 0 0 50px ${darken(0.2, secondaryColor)}, inset 0 0 10px ${secondaryColor};
+    box-shadow: 0 0 50px ${darken(0.2, rgba(secondaryColor, 0))}, inset 0 0 10px ${rgba(secondaryColor, 0)};
   }
 `
 
@@ -29,11 +27,15 @@ const ClapButton = styled.button`
     left: 0;
     display: block;
     border-radius: 50%;
+    opacity: 0;
+    animation: ${shockwave} 1s ease-in 0.3s infinite;
+    transition: opacity 0.3s ease-in;
   }
 
   &:hover, &:focus {
     &::after {
-      animation: ${shockwave} 1s ease-in infinite;
+      opacity: 1;
+      transition-timing-function: ease-out;
     }
   }
 
