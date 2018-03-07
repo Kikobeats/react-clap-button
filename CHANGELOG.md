@@ -1,3 +1,20 @@
+<a name="1.0.4"></a>
+## 1.0.4 (2018-03-07)
+
+* Fix storybook custom icon size ([1f83242](https://github.com/kikobeats/react-clap-button/commit/1f83242))
+* Fix storybook ecamples ([543dc61](https://github.com/kikobeats/react-clap-button/commit/543dc61))
+* Fix theme prop ([54bade6](https://github.com/kikobeats/react-clap-button/commit/54bade6))
+* Fixes ([2bd6713](https://github.com/kikobeats/react-clap-button/commit/2bd6713))
+* Misc. formatting updates ([7172e03](https://github.com/kikobeats/react-clap-button/commit/7172e03))
+* Misc. refactor icon ([ce32b0d](https://github.com/kikobeats/react-clap-button/commit/ce32b0d))
+* Refactoring ([e996106](https://github.com/kikobeats/react-clap-button/commit/e996106))
+* Smoother glow animation ([a937f9d](https://github.com/kikobeats/react-clap-button/commit/a937f9d))
+* Update `getTheme` method ([f284a40](https://github.com/kikobeats/react-clap-button/commit/f284a40))
+* Update icon example in storybook to `ThumbsUp` icon ([d00ab66](https://github.com/kikobeats/react-clap-button/commit/d00ab66))
+* fix(package): update styled-components to version 3.2.0 ([a076193](https://github.com/kikobeats/react-clap-button/commit/a076193))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2018-03-04)
 
