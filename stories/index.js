@@ -20,7 +20,8 @@ const CustomIcon = styled(ThumbsUp)`
 storiesOf('ClapButton', module)
   .addDecorator(centered)
   .addWithJSX('default', () => <ClapButton />)
-  .addWithJSX('maxCount', () => <ClapButton maxCount={3} countTotal={100} />)
+  .addWithJSX('maxCount', () => <ClapButton maxCount={3} countTotal={5005} />)
+  .addWithJSX('count', () => <ClapButton countTotal={5005} count={3} />)
   .addWithJSX('icon', () => (
     <ClapButton
       iconComponent={props => <CustomIcon {...props} size={38} />}
