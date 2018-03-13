@@ -67,10 +67,8 @@
     "build-storybook": "build-storybook",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
-    "posttest": "npm run size",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
-    "size": "size-limit",
     "start": "node scripts/start.js",
     "test": "exit 0"
   },
@@ -84,12 +82,6 @@
   "peerDependencies": {
     "react": ">= 16 < 17"
   },
-  "size-limit": [
-    {
-      "path": "./lib",
-      "limit": "52 kB"
-    }
-  ],
   "standard": {
     "globals": [
       "React",
