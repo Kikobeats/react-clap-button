@@ -61,14 +61,14 @@ const transitionStyles = {
     transform: 'translateX(calc(100% - 5px))'
   }),
   exiting: ({isClicked}) => ({
-    transitionDuration: isClicked ? '0.1s' : '0.3s',
-    transitionDelay: isClicked ? '0s' : '0.9s'
+    transitionDuration: isClicked ? '0.15s' : '0.3s',
+    transitionDelay: isClicked ? '0s' : '0.8s'
   })
 }
 
 export default ({in: inProp, ...props}) => {
   return (
-    <Transition in={inProp} timeout={{enter: 900}}>
+    <Transition in={inProp} timeout={{enter: 600}}>
       {state => <ClearClaps style={transitionStyles[state] && transitionStyles[state](props)} {...props} />}
     </Transition>
   )
