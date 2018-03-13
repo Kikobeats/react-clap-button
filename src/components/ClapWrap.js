@@ -36,17 +36,25 @@ export default class ClapWrap extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const {children, isClicked, onClickClear} = this.props
     const {displayClear} = this.state
     return (
-      <Wrap onMouseLeave={this.mouseLeave}>
+      <Wrap
+        onMouseLeave={this.mouseLeave}
+        onClick={e => {
+          this.state.isClicked = true
+          setTimeout(() => {
+            this.state.isClicked = false
+          }, 100)
+        }}>
         <ClapWrapChildren onMouseMove={this.mouseMove} onClick={this.onClick}>
           {children}
         </ClapWrapChildren>
         <ClearClaps
           onClick={onClickClear}
           in={displayClear && isClicked}
+          isClicked={this.state.isClicked}
         />
       </Wrap>
     )
