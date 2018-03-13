@@ -7,7 +7,7 @@ const ClapCountTotal = styled.span`
   ${textStyles}
 
   ${({theme: {primaryColor, size}}) => css`
-    top: -${size / 3.5}px;
+    top: -${size / 3}px;
     color: ${primaryColor};
     width: ${size}px;
   `}
