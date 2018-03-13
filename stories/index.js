@@ -11,8 +11,8 @@ const CustomIcon = styled(ThumbsUp)`
   stroke: ${({ theme: { secondaryColor } }) => secondaryColor};
   stroke-width: 1px;
   fill: none;
-  ${props => props.isClicked && css`
-      fill: ${({ theme: { secondaryColor } }) => secondaryColor};
+  ${({isClicked, theme: {secondaryColor}}) => isClicked && css`
+      fill: ${secondaryColor};
       stroke: white;
     `};
 `
@@ -28,6 +28,6 @@ storiesOf('ClapButton', module)
   ))
   .addWithJSX('color', () => (
     <ClapButton
-      theme={{ primaryColor: '#5f27ae', secondaryColor: '#5f27ae' }}
+      theme={{ primaryColor: '#ff77bb', secondaryColor: '#5f27ae' }}
     />
   ))

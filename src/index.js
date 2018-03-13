@@ -2,7 +2,8 @@ import React from 'react'
 import mojs from 'mo-js'
 import {ThemeProvider} from 'styled-components'
 
-import ClapIcon from './icon'
+import ClapWrap from './components/ClapWrap'
+import ClapIcon from './components/ClapIcon'
 import ClapButton from './components/ClapButton'
 import ClapCount from './components/ClapCount'
 import ClapCountTotal from './components/ClapCountTotal'
@@ -22,6 +23,7 @@ const Clap = class extends React.Component {
       isClicked: false
     }
     this.onClick = this.onClick.bind(this)
+    this.onClickClear = this.onClickClear.bind(this)
   }
 
   componentDidMount () {
@@ -111,13 +113,23 @@ const Clap = class extends React.Component {
     const {maxCount} = this.props
     this.animationTimeline.replay()
 
-    this.setState((prevState, nextState) => {
-      if (prevState.count < maxCount) {
+    this.setState(({count, countTotal}) => {
+      if (count < maxCount) {
         return {
-          count: prevState.count + 1,
-          countTotal: prevState.countTotal + 1,
+          count: count + 1,
+          countTotal: countTotal + 1,
           isClicked: true
         }
+      }
+    })
+  }
+
+  onClickClear () {
+    this.setState(({count, countTotal}) => {
+      return {
+        isClicked: false,
+        countTotal: countTotal - count,
+        count: 0
       }
     })
   }
@@ -128,15 +140,17 @@ const Clap = class extends React.Component {
 
     return (
       <ThemeProvider theme={this.getTheme()}>
-        <ClapButton id='clap' onClick={this.onClick}>
-          <ClapIcon id='clap--icon' isClicked={isClicked} />
-          <ClapCount id='clap--count'>
-            +{count}
-          </ClapCount>
-          <ClapCountTotal id='clap--count-total'>
-            +{countTotal}
-          </ClapCountTotal>
-        </ClapButton>
+        <ClapWrap isClicked={isClicked} onClickClear={this.onClickClear}>
+          <ClapButton id='clap' onClick={this.onClick}>
+            <ClapIcon id='clap--icon' isClicked={isClicked} />
+            <ClapCount id='clap--count'>
+              +{count}
+            </ClapCount>
+            <ClapCountTotal id='clap--count-total'>
+              +{countTotal}
+            </ClapCountTotal>
+          </ClapButton>
+        </ClapWrap>
       </ThemeProvider>
     )
   }

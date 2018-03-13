@@ -17,7 +17,7 @@ const ClapButton = styled.button`
   position: relative;
   outline: 1px solid transparent;
   border-radius: 50%;
-  background: none;
+  background: #fff;
   transition: border 0.3s ease-in;
 
   &::after {
