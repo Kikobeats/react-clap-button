@@ -1,16 +1,15 @@
 import styled, {css, keyframes} from 'styled-components'
-import {darken, rgba} from 'polished'
 
 const shockwave = ({theme: {secondaryColor}}) => keyframes`
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 2px ${secondaryColor};
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 50px ${darken(0.2, rgba(secondaryColor, 0))}, inset 0 0 10px ${rgba(secondaryColor, 0)};
-  }
+0%{
+     box-shadow:0 0
+ }
+ 70%{
+     box-shadow:0 0 5px 10px rgba(255,255,255,0)
+ }
+ 100%{
+     box-shadow:0 0 0 0 rgba(255,255,255,0)
+ }
 `
 
 const ClapButton = styled.button`
@@ -27,21 +26,17 @@ const ClapButton = styled.button`
     left: 0;
     display: block;
     border-radius: 50%;
-    opacity: 0;
-    animation: ${shockwave} 2.5s ease-in 0.3s infinite;
-    transition: opacity 0.3s ease-in;
-  }
-
-  &:hover, &:focus {
-    &::after {
-      opacity: 1;
-      transition-timing-function: ease-out;
-    }
   }
 
   &:hover {
     cursor: pointer;
   }
+
+  ${props => props.isHover && css`
+    &::after {
+      animation: ${shockwave} 2s infinite;
+    }
+  `}
 
   ${({theme: {primaryColor, secondaryColor, size}}) => css`
     width: ${size}px;
@@ -51,6 +46,9 @@ const ClapButton = styled.button`
     &::after {
       width: ${size - 1}px;
       height: ${size - 1}px;
+      border-color: ${secondaryColor};
+      color: ${secondaryColor};
+      fill: ${secondaryColor};
     }
 
     &:hover, &:focus {

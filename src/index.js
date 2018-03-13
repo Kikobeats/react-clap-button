@@ -20,7 +20,8 @@ const Clap = class extends React.Component {
     this.state = {
       count: this.props.count,
       countTotal: this.props.countTotal,
-      isClicked: false
+      isClicked: props.count > 0,
+      isHover: false
     }
     this.onClick = this.onClick.bind(this)
     this.onClickClear = this.onClickClear.bind(this)
@@ -135,19 +136,25 @@ const Clap = class extends React.Component {
   }
 
   render () {
-    const {count, countTotal, isClicked} = this.state
+    const {count, countTotal, isClicked, isHover} = this.state
     const {iconComponent: ClapIcon} = this.props
 
     return (
       <ThemeProvider theme={this.getTheme()}>
         <ClapWrap isClicked={isClicked} onClickClear={this.onClickClear}>
-          <ClapButton id='clap' onClick={this.onClick}>
+          <ClapButton
+            id='clap'
+            onClick={this.onClick}
+            onMouseEnter={e => this.setState({isHover: true})}
+            onMouseLeave={e => this.setState({isHover: false})}
+            isHover={isHover && count === 0}
+          >
             <ClapIcon id='clap--icon' isClicked={isClicked} />
             <ClapCount id='clap--count'>
               +{count}
             </ClapCount>
             <ClapCountTotal id='clap--count-total'>
-              +{countTotal}
+              {Number(countTotal).toLocaleString()}
             </ClapCountTotal>
           </ClapButton>
         </ClapWrap>
@@ -160,6 +167,7 @@ Clap.defaultProps = {
   countTotal: 0,
   count: 0,
   maxCount: 50,
+  isClicked: false,
   iconComponent: ClapIcon
 }
 
