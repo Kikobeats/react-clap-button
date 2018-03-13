@@ -18,7 +18,7 @@ const ClapButton = styled.button`
   outline: 1px solid transparent;
   border-radius: 50%;
   background: #fff;
-  transition: border 0.3s ease-in;
+  transition: border 0.1s ease-in;
 
   &::after {
     content: '';
@@ -28,7 +28,7 @@ const ClapButton = styled.button`
     display: block;
     border-radius: 50%;
     opacity: 0;
-    animation: ${shockwave} 1s ease-in 0.3s infinite;
+    animation: ${shockwave} 2.5s ease-in 0.3s infinite;
     transition: opacity 0.3s ease-in;
   }
 
