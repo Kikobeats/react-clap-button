@@ -17,7 +17,7 @@ const ClearClaps = styled.button`
   backface-visibility: hidden;
   cursor: pointer;
   outline: none;
-  transition: transform 0.3s ease-in-out;
+  transition: transform .3s cubic-bezier(.25,0,.6,1.4) 1s,-webkit-transform .3s cubic-bezier(.25,0,.6,1.4) 1s;
 
   &::before,
   &::after {
@@ -58,17 +58,18 @@ const ClearClaps = styled.button`
 
 const transitionStyles = {
   entered: () => ({
-    transform: 'translateX(calc(100% - 5px))'
+    transform: 'translateX(calc(100% - 5px))',
+    transitionDelay: '0s'
   }),
   exiting: ({isClicked}) => ({
-    transitionDuration: isClicked ? '0.15s' : '0.3s',
-    transitionDelay: isClicked ? '0s' : '0.8s'
+    transitionDuration: isClicked ? '0.25s' : '0.3s',
+    transitionDelay: isClicked ? '0s' : '0.7s'
   })
 }
 
 export default ({in: inProp, ...props}) => {
   return (
-    <Transition in={inProp} timeout={{enter: 600}}>
+    <Transition in={inProp} timeout={{enter: 400}}>
       {state => <ClearClaps style={transitionStyles[state] && transitionStyles[state](props)} {...props} />}
     </Transition>
   )

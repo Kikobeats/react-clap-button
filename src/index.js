@@ -18,6 +18,7 @@ const Clap = class extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      unclicked: true,
       count: this.props.count,
       countTotal: this.props.countTotal,
       isClicked: props.count > 0,
@@ -76,11 +77,13 @@ const Clap = class extends React.Component {
       delay: tlDuration / 2
     })
 
+    const opacityStart = this.props.count > 0 && this.state.unclicked ? 1 : 0
+
     const countTotalAnimation = new mojs.Html({
       el: '#clap--count-total',
       isShowStart: false,
       isShowEnd: true,
-      opacity: {0: 1},
+      opacity: {[opacityStart]: 1},
       delay: 3 * tlDuration / 2,
       duration: tlDuration,
       y: {0: -3}
@@ -117,6 +120,7 @@ const Clap = class extends React.Component {
     this.setState(({count, countTotal}) => {
       if (count < maxCount) {
         return {
+          unclicked: false,
           count: count + 1,
           countTotal: countTotal + 1,
           isClicked: true
