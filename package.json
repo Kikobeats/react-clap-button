@@ -68,6 +68,7 @@
     "build-storybook": "build-storybook",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown && standard src stories",
+    "precommit": "lint-staged",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "start": "node scripts/start.js",
