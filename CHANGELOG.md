@@ -1,3 +1,26 @@
+<a name="1.0.5"></a>
+## 1.0.5 (2018-03-17)
+
+* Add `onClickClear` method ([a2acecf](https://github.com/kikobeats/react-clap-button/commit/a2acecf))
+* Add count story ([7d159aa](https://github.com/kikobeats/react-clap-button/commit/7d159aa))
+* Add different timing after click ([9e4741a](https://github.com/kikobeats/react-clap-button/commit/9e4741a))
+* Add missing precommit script ([c0c4136](https://github.com/kikobeats/react-clap-button/commit/c0c4136))
+* Adjust space ([7846a1f](https://github.com/kikobeats/react-clap-button/commit/7846a1f))
+* Adjust timing ([1115c40](https://github.com/kikobeats/react-clap-button/commit/1115c40))
+* Create initial components for “clear results” ([cc19dd1](https://github.com/kikobeats/react-clap-button/commit/cc19dd1))
+* Fix `onClickClear` method ([3610e96](https://github.com/kikobeats/react-clap-button/commit/3610e96))
+* Hide `ClapCountTotal` when total === 0 ([e855c54](https://github.com/kikobeats/react-clap-button/commit/e855c54))
+* Improve animation ([e241bb9](https://github.com/kikobeats/react-clap-button/commit/e241bb9))
+* Improve hover effect ([74ec2e3](https://github.com/kikobeats/react-clap-button/commit/74ec2e3))
+* Modify timing ([67b676e](https://github.com/kikobeats/react-clap-button/commit/67b676e))
+* Remove size-limit ([a8caf29](https://github.com/kikobeats/react-clap-button/commit/a8caf29))
+* Update “color” stories primaryColor ([ef83aaa](https://github.com/kikobeats/react-clap-button/commit/ef83aaa))
+* Update ClearClaps ([585f45e](https://github.com/kikobeats/react-clap-button/commit/585f45e))
+* Update ClearClaps transition ([78d83d9](https://github.com/kikobeats/react-clap-button/commit/78d83d9))
+* Update demo ([ee19daf](https://github.com/kikobeats/react-clap-button/commit/ee19daf))
+
+
+
 <a name="1.0.4"></a>
 ## 1.0.4 (2018-03-07)
 
