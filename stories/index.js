@@ -29,6 +29,6 @@ storiesOf('ClapButton', module)
   ))
   .addWithJSX('color', () => (
     <ClapButton
-      theme={{ primaryColor: '#ff77bb', secondaryColor: '#5f27ae' }}
+      theme={{ secondaryColor: '#5f27ae' }}
     />
   ))
