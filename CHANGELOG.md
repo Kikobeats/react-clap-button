@@ -1,3 +1,11 @@
+<a name="1.0.6"></a>
+## 1.0.6 (2018-04-26)
+
+* Add better browser targets ([512614b](https://github.com/kikobeats/react-clap-button/commit/512614b))
+* Remove final bundle from repository ([debb47f](https://github.com/kikobeats/react-clap-button/commit/debb47f))
+
+
+
 <a name="1.0.5"></a>
 ## 1.0.5 (2018-03-17)
 
