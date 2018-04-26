@@ -1,22 +1,36 @@
 {
-  "presets": [
-    ["env", {
-      "targets": { "browsers": ["last 2 versions", "ie >= 9"] }
-    }],
-    "react"
-  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-constant-elements",
+        "transform-react-inline-elements",
+        "transform-react-pure-class-to-function",
+        [
+          "transform-react-remove-prop-types",
+          {
+            "removeImport": true
+          }
+        ]
+      ]
+    }
+  },
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread"
   ],
-  "env": {
-    "production": {
-      "plugins": [
-        "transform-react-inline-elements",
-        ["transform-react-remove-prop-types", {"removeImport": true}],
-        "transform-react-pure-class-to-function",
-        "transform-react-constant-elements"
-      ]
-    }
-  }
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            ">0.25%",
+            "not ie 11",
+            "not op_mini all"
+          ]
+        }
+      }
+    ],
+    "react"
+  ]
 }
