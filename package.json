@@ -67,7 +67,7 @@
     "build": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
     "build-storybook": "build-storybook",
     "dev": "start-storybook -p 6006",
-    "lint": "standard-markdown && standard src stories",
+    "lint": "standard-markdown README.md && standard src stories",
     "precommit": "lint-staged",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
