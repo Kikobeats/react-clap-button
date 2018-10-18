@@ -2,7 +2,7 @@
   "name": "react-clap-button",
   "description": "A Medium like clap button",
   "homepage": "https://github.com/kikobeats/react-clap-button",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "lib/index.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
@@ -74,6 +74,11 @@
     "test": "exit 0"
   },
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.js": [
       "prettier-standard",
@@ -92,10 +97,5 @@
     "plugins": [
       "jsx-a11y"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

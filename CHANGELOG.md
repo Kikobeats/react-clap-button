@@ -1,3 +1,11 @@
+<a name="1.0.8"></a>
+## 1.0.8 (2018-10-18)
+
+* Migrate husky ([ad1301a](https://github.com/kikobeats/react-clap-button/commit/ad1301a))
+* Update polished ([61b58cd](https://github.com/kikobeats/react-clap-button/commit/61b58cd))
+
+
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2018-10-18)
 
