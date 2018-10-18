@@ -1,3 +1,15 @@
+<a name="1.0.7"></a>
+## 1.0.7 (2018-10-18)
+
+* fix(package): update polished to version 2.0.1 ([228c8ee](https://github.com/kikobeats/react-clap-button/commit/228c8ee))
+* fix(package): update polished to version 2.1.0 ([9e649a6](https://github.com/kikobeats/react-clap-button/commit/9e649a6))
+* fix(package): update styled-components to version 3.3.0 ([b4df56f](https://github.com/kikobeats/react-clap-button/commit/b4df56f))
+* fix(package): update styled-components to version 3.4.0 ([eb0574e](https://github.com/kikobeats/react-clap-button/commit/eb0574e))
+* fix(package): update styled-components to version 4.0.0 ([849c0d5](https://github.com/kikobeats/react-clap-button/commit/849c0d5))
+* Update package.json ([90c5481](https://github.com/kikobeats/react-clap-button/commit/90c5481))
+
+
+
 <a name="1.0.6"></a>
 ## 1.0.6 (2018-04-26)
 
