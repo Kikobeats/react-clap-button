@@ -22,6 +22,10 @@
 $ npm install react-clap-button --save
 ```
 
+## Related
+
+- [vue-clap-button](https://github.com/AJLoveChina/vue-clap-button) – A Medium like clap button written on Vue.js
+
 ## License
 
 **react-clap-button** © [Kiko Beats](https://kikobeats.com), released under the [MIT](https://github.com/Kikobeats/react-clap-button/blob/master/LICENSE.md) License.<br>
