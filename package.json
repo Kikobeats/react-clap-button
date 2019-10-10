@@ -97,5 +97,9 @@
     "plugins": [
       "jsx-a11y"
     ]
-  }
+  },
+  "contributors": [
+    "Brad Adams <hi@breadadams.com>",
+    "santosh898 <santoshkottakota007@gmail.com>"
+  ]
 }
