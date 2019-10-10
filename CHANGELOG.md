@@ -1,3 +1,10 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2019-10-10)
+
+* Nano bug fix. ([adeb5a9](https://github.com/kikobeats/react-clap-button/commit/adeb5a9))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2019-10-10)
 
