@@ -24,9 +24,9 @@
   ],
   "dependencies": {
     "mo-js": "~0.288.2",
-    "polished": "~3.1.0",
+    "polished": "~3.4.1",
     "react-transition-group": "^4.0.0",
-    "styled-components": "~4.3.0"
+    "styled-components": "~4.4.0"
   },
   "devDependencies": {
     "@storybook/addon-centered": "latest",
