@@ -1,3 +1,21 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2019-10-10)
+
+* build: add contributors ([18600cd](https://github.com/kikobeats/react-clap-button/commit/18600cd))
+* build: update dependencies ([c2e4b43](https://github.com/kikobeats/react-clap-button/commit/c2e4b43))
+* callback for count change ([2d1b7f7](https://github.com/kikobeats/react-clap-button/commit/2d1b7f7))
+* Update README.md ([e111441](https://github.com/kikobeats/react-clap-button/commit/e111441))
+* fix(package): update polished to version 2.3.0 ([212adce](https://github.com/kikobeats/react-clap-button/commit/212adce))
+* fix(package): update polished to version 3.0.0 ([3a6348c](https://github.com/kikobeats/react-clap-button/commit/3a6348c))
+* fix(package): update polished to version 3.1.0 ([275c5e6](https://github.com/kikobeats/react-clap-button/commit/275c5e6))
+* fix(package): update react-transition-group to version 3.0.0 ([8759f29](https://github.com/kikobeats/react-clap-button/commit/8759f29))
+* fix(package): update react-transition-group to version 4.0.0 ([e76d863](https://github.com/kikobeats/react-clap-button/commit/e76d863))
+* fix(package): update styled-components to version 4.1.0 ([dda01e0](https://github.com/kikobeats/react-clap-button/commit/dda01e0))
+* fix(package): update styled-components to version 4.2.0 ([372d473](https://github.com/kikobeats/react-clap-button/commit/372d473))
+* fix(package): update styled-components to version 4.3.0 ([d5bb878](https://github.com/kikobeats/react-clap-button/commit/d5bb878))
+
+
+
 <a name="1.0.8"></a>
 ## 1.0.8 (2018-10-18)
 
