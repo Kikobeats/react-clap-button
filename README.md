@@ -6,7 +6,6 @@
   </br>
 </p>
 
-
 ![Last version](https://img.shields.io/github/tag/Kikobeats/react-clap-button.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/react-clap-button/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/react-clap-button)
 [![Dependency status](https://img.shields.io/david/Kikobeats/react-clap-button.svg?style=flat-square)](https://david-dm.org/Kikobeats/react-clap-button)
@@ -20,6 +19,31 @@
 
 ```bash
 $ npm install react-clap-button --save
+```
+
+## Usage
+
+```
+import React from 'react';
+import ClapButton from 'react-clap-button';
+
+export default () => {
+
+    const onCountChange = ({ count, totalCount }) => {
+
+    };
+    // All Props are Optional
+    return (
+        <ClapButton
+            count={0}
+            countTotal={0}
+            maxCount={50}
+            isClicked={false}
+            onCountChange={onCountChange}
+            iconComponent={props => <CustomIcon {...props} size={38} />
+        />
+    );
+}
 ```
 
 ## Related
