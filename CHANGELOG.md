@@ -1,3 +1,53 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 1.1.3 (2019-10-11)
+
+### 1.1.2 (2019-10-11)
+
+### 1.1.1 (2019-10-10)
+
+## 1.1.0 (2019-10-10)
+
+
+### Bug Fixes
+
+* **package:** update polished to version 2.3.0 ([212adce](https://github.com/kikobeats/react-clap-button/commit/212adce17c2c026cdaaf1a6795f55b2e14961987))
+* **package:** update polished to version 3.0.0 ([3a6348c](https://github.com/kikobeats/react-clap-button/commit/3a6348cab2c7c2f04e98624506b354d02f25ef2e))
+* **package:** update polished to version 3.1.0 ([275c5e6](https://github.com/kikobeats/react-clap-button/commit/275c5e6ce5bc3e6a9b151c10f880e33ef2c59aae))
+* **package:** update react-transition-group to version 3.0.0 ([8759f29](https://github.com/kikobeats/react-clap-button/commit/8759f294282f4c1c1aabe540fa8aa0a806a8b446))
+* **package:** update react-transition-group to version 4.0.0 ([e76d863](https://github.com/kikobeats/react-clap-button/commit/e76d863a08f4036d81e8f0dbb3674a9abae66219))
+* **package:** update styled-components to version 4.1.0 ([dda01e0](https://github.com/kikobeats/react-clap-button/commit/dda01e03887adb55ba9364661f7840d23a8cd44a))
+* **package:** update styled-components to version 4.2.0 ([372d473](https://github.com/kikobeats/react-clap-button/commit/372d4738e35f2604cb18814945965363f57f85eb))
+* **package:** update styled-components to version 4.3.0 ([d5bb878](https://github.com/kikobeats/react-clap-button/commit/d5bb87861a76a7f1582533af64e6eaa7a6a43b9c))
+
+### 1.0.8 (2018-10-18)
+
+### 1.0.7 (2018-10-18)
+
+
+### Bug Fixes
+
+* **package:** update polished to version 2.0.1 ([228c8ee](https://github.com/kikobeats/react-clap-button/commit/228c8eeb4117230dcd3d6eccff8367f2f9c8ef79))
+* **package:** update polished to version 2.1.0 ([9e649a6](https://github.com/kikobeats/react-clap-button/commit/9e649a62a513894def705912c152c5cb50ecb5ad))
+* **package:** update styled-components to version 3.3.0 ([b4df56f](https://github.com/kikobeats/react-clap-button/commit/b4df56fbd3af5d894d6efbdf3b1b23ce742aa0c0))
+* **package:** update styled-components to version 3.4.0 ([eb0574e](https://github.com/kikobeats/react-clap-button/commit/eb0574e60452435e51717f5ceb73018bb1313440))
+* **package:** update styled-components to version 4.0.0 ([849c0d5](https://github.com/kikobeats/react-clap-button/commit/849c0d5dc466fc320ad11ddd50aef9c571aed1fa))
+
+### 1.0.6 (2018-04-26)
+
+### 1.0.5 (2018-03-17)
+
+### 1.0.4 (2018-03-07)
+
+
+### Bug Fixes
+
+* **package:** update styled-components to version 3.2.0 ([a076193](https://github.com/kikobeats/react-clap-button/commit/a0761936ec55b3bfbaa902f9a202a76a1ffec393))
+
+### 1.0.3 (2018-03-04)
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2019-10-11)
 
@@ -149,6 +199,3 @@
 * Update README.md ([ba12336](https://github.com/kikobeats/react-clap-button/commit/ba12336))
 * Update scripts ([4aefe23](https://github.com/kikobeats/react-clap-button/commit/4aefe23))
 * docs(readme): add Greenkeeper badge ([3c18b9b](https://github.com/kikobeats/react-clap-button/commit/3c18b9b))
-
-
-
