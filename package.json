@@ -39,6 +39,8 @@
     "styled-components": "~4.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "@storybook/addon-centered": "latest",
     "@storybook/addon-options": "latest",
     "@storybook/addon-viewport": "latest",
@@ -53,7 +55,11 @@
     "babel-plugin-transform-react-remove-prop-types": "latest",
     "babel-preset-env": "latest",
     "babel-preset-react": "latest",
+    "ci-publish": "latest",
+    "conventional-github-releaser": "latest",
     "eslint-plugin-jsx-a11y": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
     "husky": "latest",
     "lint-staged": "latest",
     "npm-check-updates": "latest",
@@ -65,6 +71,7 @@
     "size-limit": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
+    "standard-version": "latest",
     "storybook-addon-jsx": "latest"
   },
   "engines": {
@@ -78,20 +85,37 @@
     "build-storybook": "build-storybook",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
+    "postrelease": "npm run release:tags && npm run release:github && ci-publish",
+    "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
+    "release": "standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
     "start": "node scripts/start.js",
-    "test": "exit 0"
+    "test": "exit 0",
+    "update": "ncu -u",
+    "update:check": "ncu -- --error-level 2"
   },
   "license": "MIT",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
       "prettier-standard",
+      "git add"
+    ],
+    "package.json": [
+      "finepack",
       "git add"
     ]
   },
