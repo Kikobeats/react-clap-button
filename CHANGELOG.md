@@ -1,3 +1,10 @@
+<a name="1.1.2"></a>
+## 1.1.2 (2019-10-11)
+
+* Using Ref based element selection instead of ids ([c3c1165](https://github.com/kikobeats/react-clap-button/commit/c3c1165))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2019-10-10)
 
