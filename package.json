@@ -83,6 +83,7 @@
   "scripts": {
     "build": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
     "build-storybook": "build-storybook",
+    "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
