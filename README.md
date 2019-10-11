@@ -29,7 +29,7 @@ import ClapButton from 'react-clap-button';
 
 export default () => {
 
-    const onCountChange = ({ count, totalCount }) => {
+    const onCountChange = ({ count, countTotal }) => {
 
     };
     // All Props are Optional
