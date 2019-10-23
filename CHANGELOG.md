@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/kikobeats/react-clap-button/compare/v1.1.3...v1.1.4) (2019-10-23)
+
+
+### Bug Fixes
+
+* add postinstall script ([688dcd7](https://github.com/kikobeats/react-clap-button/commit/688dcd744ff7209658c5e2d3483b143a421155c6)), closes [#45](https://github.com/kikobeats/react-clap-button/issues/45)
+
 ### 1.1.3 (2019-10-11)
 
 ### 1.1.2 (2019-10-11)
