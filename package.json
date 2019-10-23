@@ -86,6 +86,7 @@
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
+    "postinstall": "npm run build",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
     "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
