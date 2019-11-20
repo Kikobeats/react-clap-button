@@ -40,6 +40,7 @@
     "styled-components": "~4.4.0"
   },
   "devDependencies": {
+    "@babel/core": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@storybook/addon-centered": "latest",
@@ -48,6 +49,7 @@
     "@storybook/react": "latest",
     "babel-cli": "latest",
     "babel-eslint": "latest",
+    "babel-loader": "~7.1.5",
     "babel-plugin-transform-class-properties": "latest",
     "babel-plugin-transform-object-rest-spread": "latest",
     "babel-plugin-transform-react-constant-elements": "latest",
