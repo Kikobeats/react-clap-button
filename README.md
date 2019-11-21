@@ -41,6 +41,7 @@ export default () => {
             isClicked={false}
             onCountChange={onCountChange}
             iconComponent={props => <CustomIcon {...props} size={38} />
+            canSwitch={false}
         />
     );
 }
