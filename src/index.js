@@ -15,7 +15,7 @@ const defaultTheme = {
 }
 
 const Clap = class extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       unclicked: true,
@@ -32,7 +32,7 @@ const Clap = class extends React.Component {
     this.clapCountTotalRef = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const tlDuration = 300
     const triangleBurst = new mojs.Burst({
       parent: this.clapButtonRef.current,
@@ -112,16 +112,28 @@ const Clap = class extends React.Component {
     ])
   }
 
-  getTheme() {
+  getTheme () {
     const { theme = {} } = this.props
     return Object.assign({}, defaultTheme, theme)
   }
 
-  onClick() {
-    const { maxCount, onCountChange } = this.props
+  onClick () {
+    const { maxCount, onCountChange, canSwitch } = this.props
     this.animationTimeline.replay()
 
-    this.setState(({ count, countTotal }) => {
+    this.setState(({ count, countTotal, isClicked }) => {
+      // Switch between clicked
+      if (canSwitch) {
+        const curCount = isClicked ? count - 1 : count + 1
+        const curCountTotal = isClicked ? countTotal - 1 : countTotal + 1
+        onCountChange({ count: curCount, countTotal: curCountTotal })
+        return {
+          unclicked: isClicked,
+          count: curCount,
+          countTotal: curCountTotal,
+          isClicked: !isClicked
+        }
+      }
       if (count < maxCount) {
         onCountChange({ count: count + 1, countTotal: countTotal + 1 })
         return {
@@ -134,7 +146,7 @@ const Clap = class extends React.Component {
     })
   }
 
-  onClickClear() {
+  onClickClear () {
     const { onCountChange } = this.props
     this.setState(({ count, countTotal }) => {
       onCountChange({ count: 0, countTotal: countTotal - count })
@@ -146,9 +158,10 @@ const Clap = class extends React.Component {
     })
   }
 
-  render() {
+  render () {
     const { count, countTotal, isClicked, isHover } = this.state
-    const { iconComponent: ClapIcon } = this.props
+    const { iconComponent: ClapIcon, canSwitch } = this.props
+    const clapCountText = canSwitch ? `${isClicked ? '+' : '-'}1` : `+${count}`
 
     return (
       <ThemeProvider theme={this.getTheme()}>
@@ -163,7 +176,7 @@ const Clap = class extends React.Component {
           >
             <ClapIcon ref={this.clapIconRef} className='clap--icon' isClicked={isClicked} />
             <ClapCount ref={this.clapCountRef} className='clap--count'>
-              +{count}
+              {clapCountText}
             </ClapCount>
             <ClapCountTotal ref={this.clapCountTotalRef} className='clap--count-total'>
               {Number(countTotal).toLocaleString()}
@@ -180,8 +193,9 @@ Clap.defaultProps = {
   count: 0,
   maxCount: 50,
   isClicked: false,
-  onCountChange: () => { },
-  iconComponent: ClapIcon
+  onCountChange: () => {},
+  iconComponent: ClapIcon,
+  canSwitch: false
 }
 
 export default Clap
