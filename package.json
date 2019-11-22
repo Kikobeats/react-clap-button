@@ -49,7 +49,7 @@
     "@storybook/react": "latest",
     "babel-cli": "latest",
     "babel-eslint": "latest",
-    "babel-loader": "~7.1.5",
+    "babel-loader": "latest",
     "babel-plugin-transform-class-properties": "latest",
     "babel-plugin-transform-object-rest-spread": "latest",
     "babel-plugin-transform-react-constant-elements": "latest",
