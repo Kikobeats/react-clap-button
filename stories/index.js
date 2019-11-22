@@ -1,8 +1,3 @@
-/*
- * @Date: 2019-11-20 18:31:13
- * @LastEditors: Tian Zhi
- * @LastEditTime: 2019-11-21 10:32:22
- */
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { storiesOf } from '@storybook/react'
