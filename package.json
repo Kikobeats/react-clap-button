@@ -2,7 +2,7 @@
   "name": "react-clap-button",
   "description": "A Medium like clap button",
   "homepage": "https://github.com/kikobeats/react-clap-button",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "lib/index.js",
   "module": "src/index.js",
   "author": {
@@ -12,12 +12,12 @@
   },
   "contributors": [
     {
-      "name": "santosh898",
-      "email": "santoshkottakota007@gmail.com"
-    },
-    {
       "name": "Brad Adams",
       "email": "hi@breadadams.com"
+    },
+    {
+      "name": "santosh898",
+      "email": "santoshkottakota007@gmail.com"
     }
   ],
   "repository": {
@@ -87,9 +87,8 @@
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
-    "postinstall": "npm run build",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
-    "prerelease": "npm run update:check && npm run contributors",
+    "prerelease": "npm run build && npm run update:check && npm run contributors",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "release": "standard-version -a",
