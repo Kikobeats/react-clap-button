@@ -1,5 +1,4 @@
 import React from 'react'
-import mojs from 'mo-js'
 import { ThemeProvider } from 'styled-components'
 
 import ClapWrap from './components/ClapWrap'
@@ -15,7 +14,7 @@ const defaultTheme = {
 }
 
 const Clap = class extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       unclicked: true,
@@ -32,7 +31,10 @@ const Clap = class extends React.Component {
     this.clapCountTotalRef = React.createRef()
   }
 
-  componentDidMount() {
+  componentDidMount () {
+    // require mo-js on mount so it does not break SSR
+    const mojs = require('mo-js')
+
     const tlDuration = 300
     const triangleBurst = new mojs.Burst({
       parent: this.clapButtonRef.current,
@@ -112,12 +114,12 @@ const Clap = class extends React.Component {
     ])
   }
 
-  getTheme() {
+  getTheme () {
     const { theme = {} } = this.props
     return Object.assign({}, defaultTheme, theme)
   }
 
-  onClick() {
+  onClick () {
     const { maxCount, onCountChange } = this.props
     this.animationTimeline.replay()
 
@@ -134,7 +136,7 @@ const Clap = class extends React.Component {
     })
   }
 
-  onClickClear() {
+  onClickClear () {
     const { onCountChange } = this.props
     this.setState(({ count, countTotal }) => {
       onCountChange({ count: 0, countTotal: countTotal - count })
@@ -146,7 +148,7 @@ const Clap = class extends React.Component {
     })
   }
 
-  render() {
+  render () {
     const { count, countTotal, isClicked, isHover } = this.state
     const { iconComponent: ClapIcon } = this.props
 
@@ -180,7 +182,7 @@ Clap.defaultProps = {
   count: 0,
   maxCount: 50,
   isClicked: false,
-  onCountChange: () => { },
+  onCountChange: () => {},
   iconComponent: ClapIcon
 }
 
