@@ -2,35 +2,25 @@
   "env": {
     "production": {
       "plugins": [
-        "transform-react-constant-elements",
-        "transform-react-inline-elements",
+        "@babel/plugin-transform-react-inline-elements",
+        ["transform-react-remove-prop-types", {"removeImport": true}],
         "transform-react-pure-class-to-function",
-        [
-          "transform-react-remove-prop-types",
-          {
-            "removeImport": true
-          }
-        ]
+        "@babel/plugin-transform-react-constant-elements"
       ]
     }
   },
-  "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread"
-  ],
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            ">0.25%",
-            "not ie 11",
-            "not op_mini all"
-          ]
-        }
-      }
-    ],
-    "react"
+    ["@babel/preset-env", {
+      "targets": { "browsers": [
+        ">0.25%",
+        "not ie 11",
+        "not op_mini all"
+      ] }
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

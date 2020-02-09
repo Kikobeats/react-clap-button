@@ -3,8 +3,8 @@
   "description": "A Medium like clap button",
   "homepage": "https://github.com/kikobeats/react-clap-button",
   "version": "1.2.0",
-  "main": "lib/index.js",
-  "module": "src/index.js",
+  "main": "dist/react-clap-button.js",
+  "module": "dist/react-clap-button.m.js",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
     "name": "Kiko Beats",
@@ -36,22 +36,21 @@
     "styled-components": "~4.4.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "latest",
+    "@babel/plugin-proposal-object-rest-spread": "latest",
+    "@babel/plugin-transform-react-constant-elements": "latest",
+    "@babel/plugin-transform-react-inline-elements": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@storybook/addon-centered": "latest",
     "@storybook/addon-options": "latest",
     "@storybook/addon-viewport": "latest",
     "@storybook/react": "latest",
-    "babel-cli": "latest",
     "babel-eslint": "latest",
-    "babel-plugin-transform-class-properties": "latest",
-    "babel-plugin-transform-object-rest-spread": "latest",
-    "babel-plugin-transform-react-constant-elements": "latest",
-    "babel-plugin-transform-react-inline-elements": "latest",
+    "babel-loader": "latest",
     "babel-plugin-transform-react-pure-class-to-function": "latest",
-    "babel-plugin-transform-react-remove-prop-types": "latest",
-    "babel-preset-env": "latest",
-    "babel-preset-react": "latest",
     "ci-publish": "latest",
     "conventional-github-releaser": "latest",
     "eslint-plugin-jsx-a11y": "latest",
@@ -59,13 +58,13 @@
     "git-authors-cli": "latest",
     "husky": "latest",
     "lint-staged": "latest",
+    "microbundle": "latest",
     "npm-check-updates": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^16",
     "react-dom": "^16",
     "react-feather": "latest",
-    "size-limit": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
     "standard-version": "latest",
@@ -75,16 +74,16 @@
     "node": ">= 8"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production BABEL_ENV=production babel src -d lib",
-    "build-storybook": "build-storybook",
+    "build": "NODE_ENV=production microbundle build -o dist --no-compress --no-sourcemap",
+    "build-storybook": "NODE_ENV=production build-storybook",
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
     "lint": "standard-markdown README.md && standard src stories",
-    "postinstall": "npm run build",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
+    "prepublishOnly": "npm run build",
     "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
     "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
@@ -110,12 +109,10 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier-standard",
-      "git add"
+      "prettier-standard"
     ],
     "package.json": [
-      "finepack",
-      "git add"
+      "finepack"
     ]
   },
   "peerDependencies": {
@@ -126,9 +123,13 @@
       "React",
       "fetch"
     ],
+    "ignore": [
+      "/dist/"
+    ],
     "parser": "babel-eslint",
     "plugins": [
       "jsx-a11y"
     ]
-  }
+  },
+  "umd:main": "dist/react-clap-button.umd.js"
 }

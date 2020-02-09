@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
-storybook-static/
-lib
+storybook-static
+dist
