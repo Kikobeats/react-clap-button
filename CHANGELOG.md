@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/kikobeats/react-clap-button/compare/v1.1.5...v1.2.0) (2020-02-09)
+
+
+### Features
+
+* fix SSR ([deceadd](https://github.com/kikobeats/react-clap-button/commit/deceadd2b7490ab93b023ab4243dc46e27c98127))
+
 ### [1.1.5](https://github.com/kikobeats/react-clap-button/compare/v1.1.4...v1.1.5) (2019-10-23)
 
 ### [1.1.4](https://github.com/kikobeats/react-clap-button/compare/v1.1.3...v1.1.4) (2019-10-23)
