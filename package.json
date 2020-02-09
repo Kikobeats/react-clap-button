@@ -86,11 +86,9 @@
     "prepublishOnly": "npm run build",
     "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
-    "pretty": "prettier-standard index.js {core,test,bin}/**/*.js --single-quote",
     "release": "standard-version -a",
     "release:github": "conventional-github-releaser -p angular",
     "release:tags": "git push --follow-tags origin HEAD:master",
-    "start": "node scripts/start.js",
     "test": "exit 0",
     "update": "ncu -u",
     "update:check": "ncu -- --error-level 2"
