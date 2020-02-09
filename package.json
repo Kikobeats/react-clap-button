@@ -51,6 +51,7 @@
     "babel-eslint": "latest",
     "babel-loader": "latest",
     "babel-plugin-transform-react-pure-class-to-function": "latest",
+    "babel-plugin-transform-react-remove-prop-types": "latest",
     "ci-publish": "latest",
     "conventional-github-releaser": "latest",
     "eslint-plugin-jsx-a11y": "latest",
@@ -58,13 +59,18 @@
     "git-authors-cli": "latest",
     "husky": "latest",
     "lint-staged": "latest",
-    "microbundle": "latest",
     "npm-check-updates": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^16",
     "react-dom": "^16",
     "react-feather": "latest",
+    "rollup": "latest",
+    "rollup-plugin-babel": "latest",
+    "rollup-plugin-filesize": "latest",
+    "rollup-plugin-peer-deps-external": "latest",
+    "rollup-plugin-terser": "latest",
+    "rollup-plugin-visualizer": "latest",
     "standard": "latest",
     "standard-markdown": "latest",
     "standard-version": "latest",
@@ -77,7 +83,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production microbundle build -o dist --no-compress --no-sourcemap",
+    "build": "NODE_ENV=production rollup -c rollup.config.js",
     "build-storybook": "NODE_ENV=production build-storybook",
     "contributors": "(git-authors-cli && finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
     "dev": "start-storybook -p 6006",
@@ -128,6 +134,5 @@
     "plugins": [
       "jsx-a11y"
     ]
-  },
-  "umd:main": "dist/react-clap-button.umd.js"
+  }
 }
