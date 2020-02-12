@@ -2,7 +2,7 @@
   "name": "react-clap-button",
   "description": "A Medium like clap button",
   "homepage": "https://github.com/kikobeats/react-clap-button",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "dist/react-clap-button.js",
   "module": "dist/react-clap-button.m.js",
   "author": {
