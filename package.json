@@ -37,7 +37,7 @@
     "mo-js": "~0.288.2",
     "polished": "~3.5.1",
     "react-transition-group": "^4.0.0",
-    "styled-components": "~5.0.1"
+    "styled-components": "~5.1.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "latest",
