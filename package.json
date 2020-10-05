@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "mo-js": "~0.288.2",
-    "polished": "~3.6.0",
+    "polished": "~4.0.1",
     "react-transition-group": "^4.0.0",
     "styled-components": "~5.2.0"
   },
