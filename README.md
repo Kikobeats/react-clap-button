@@ -40,7 +40,7 @@ export default () => {
             maxCount={50}
             isClicked={false}
             onCountChange={onCountChange}
-            iconComponent={props => <CustomIcon {...props} size={38} />
+            iconComponent={props => <CustomIcon {...props} size={38} /> }
         />
     );
 }
