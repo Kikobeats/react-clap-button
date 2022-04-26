@@ -69,7 +69,7 @@
     "npm-check-updates": "latest",
     "prettier-standard": "latest",
     "prop-types": "latest",
-    "react": "^16",
+    "react": "^18",
     "react-dom": "^16",
     "react-feather": "latest",
     "rollup": "latest",
