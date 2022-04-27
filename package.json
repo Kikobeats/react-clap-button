@@ -70,7 +70,7 @@
     "prettier-standard": "latest",
     "prop-types": "latest",
     "react": "^18",
-    "react-dom": "^16",
+    "react-dom": "^18",
     "react-feather": "latest",
     "rollup": "latest",
     "rollup-plugin-babel": "latest",
